@@ -18,6 +18,8 @@ import com.score.service.BoardServiceImpl;
 @Controller
 @RequestMapping("/Board")
 public class BoardController {
+	
+	//github Test
 
 	@Inject
 	private BoardServiceImpl service;

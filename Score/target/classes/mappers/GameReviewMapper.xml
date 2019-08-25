@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.score.mapper.GameReviewMapper">
+
+	<insert id="insert" parameterType="GameReviewVO">
+		INSERT INTO gamereview
+		(gameNumber, userNumber, userNickName, gameReviewText) VALUES
+		(#{gameNumber},#{userNumber},#{userNickName},#{gameReviewText})
+	</insert>
+
+	<select id="list" resultType="GameVO" parameterType="hashmap">
+		SELECT *
+		FROM gamereview where gameNumber = #{gameNumber}
+	</select>
+
+	<update id="update" parameterType="GameReviewVO">
+		UPDATE gamereview SET
+		gameReviewText = #{gameReviewText}
+		WHERE gameReviewNumber =
+		#{gameReviewNumber}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		DELETE FROM gamereview WHERE
+		gameReviewNumber = #{gameReviewNumber}
+	</delete>
+
+	<select id="listSearch" resultType="GameReviewVO">
+		<![CDATA[  
+		select * from gamereview where gameReviewNumber > 0 order by gameReviewNumber desc limit #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+
+</mapper>

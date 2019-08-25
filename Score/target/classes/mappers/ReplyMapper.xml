@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.score.mapper.ReplyMapper">
+
+	<insert id="insert">
+		INSERT INTO reply (userNickName, userNumber, replyContent, boardNumber) VALUES (#{userNickName}, #{userNumber}, #{replyContent}, #{boardNumber});
+	</insert>
+	
+	<select id="replyList" parameterType="Map" resultType="ReplyVO">
+		SELECT * FROM reply where boardNumber = #{boardNumber}
+ 		<choose>
+			<when test="replyPoint == 5">
+				limit #{replyPoint}
+			</when>
+		</choose>
+	</select>
+
+</mapper>

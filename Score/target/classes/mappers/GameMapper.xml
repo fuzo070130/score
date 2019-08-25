@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.score.mapper.GameMapper">
+
+	<insert id="insert" parameterType="GameVO">
+		INSERT INTO game
+		(gameTitle, gameDeveloper, gameDistributor, gamePlatform, gameSupportStatus, gameGenre, gameAgeGroup)
+		VALUES (#{gameTitle},#{gameDeveloper},#{gameDistributor},#{gamePlatform},#{gameSupportStatus},#{gameGenre},#{gameAgeGroup})
+	</insert>
+	
+	<select id="list" resultType="GameVO">
+		SELECT * FROM game
+	</select>
+
+	<select id="readPage" resultType="GameVO">
+		SELECT * FROM game WHERE
+		gameNumber = #{gameNumber}
+	</select>
+	
+	<select id="listSearch" resultType="GameVO">
+		<![CDATA[  
+	  	select * 
+	 	 from Game
+	  	where GameNumber > 0 
+		]]>
+	
+		<include refid="search"></include>
+		<![CDATA[    
+	 	 order by GameNumber desc
+	 	 limit #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+	
+	<select id="listSearchCount" resultType="int">
+		
+		<![CDATA[  
+	 	 select count(GameNumber) 
+	 	 from Game
+	 	 where GameNumber > 0 
+		]]>
+		<include refid="search"></include>
+	</select>
+	
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">
+				and GameTitle like CONCAT('%', #{keyword}, '%')
+			</if>
+		</if>
+	</sql>
+	
+	<update id="modify" parameterType="GameVO">
+		UPDATE game
+		SET
+		gameTitle= #{gameTitle},
+		gameDeveloper = #{gameDeveloper},
+		gameDistributor = #{gameDistributor},
+		gamePlatform = #{gamePlatform},
+		gameSupportStatus = #{gameSupportStatus},
+		gameGenre = #{gameGenre},
+		gameAgeGroup = #{gameAgeGroup}
+		WHERE gameNumber = #{gameNumber}
+	</update>
+
+</mapper>

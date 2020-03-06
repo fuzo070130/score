@@ -9,5 +9,9 @@ public interface UserService {
 	public UserVO registerCheck(UserVO vo)throws Exception;
 	
 	public UserVO login(UserVO vo)throws Exception;
+	
+	public int idCheck(String userID)throws Exception;
+	
+	public int nickNameCheck(String userNickName)throws Exception;
 
 }

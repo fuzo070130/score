@@ -6,11 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.score.domain.dto.ReviewCriteria;
 import com.score.domain.dto.SearchCriteria;
-import com.score.domain.vo.BoardVO;
 import com.score.domain.vo.GameVO;
-import com.score.persistence.BoardDAO;
 import com.score.persistence.GameDAO;
 
 @Service
@@ -30,7 +27,7 @@ public class GameServiceImpl implements GameService{
 	}
 
 	@Override
-	public GameVO readPage(int GameNumber) {
+	public GameVO readPage(Integer GameNumber) {
 		return dao.readPage(GameNumber);
 	}
 	

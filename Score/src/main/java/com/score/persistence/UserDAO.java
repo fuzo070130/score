@@ -10,4 +10,8 @@ public interface UserDAO {
 	
 	public UserVO login(UserVO vo)throws Exception;
 	
+	public int idCheck(String userID)throws Exception;
+	
+	public int nickNameCheck(String userNickName)throws Exception;
+	
 }

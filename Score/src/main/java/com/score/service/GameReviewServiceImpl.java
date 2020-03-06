@@ -26,7 +26,7 @@ public class GameReviewServiceImpl implements GameReveiwService {
 	}
 
 	@Override
-	public List<GameReviewVO> select(int gameNumber) {
+	public List<GameReviewVO> select(Integer gameNumber) {
 		return dao.select(gameNumber);
 	}
 
@@ -36,7 +36,7 @@ public class GameReviewServiceImpl implements GameReveiwService {
 	}
 
 	@Override
-	public int delete(int gameReviewNumber) {
+	public int delete(Integer gameReviewNumber) {
 		return dao.delete(gameReviewNumber);
 	}
 

@@ -1,5 +1,8 @@
 package com.score.controller;
 
+import java.io.File;
+
+import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -8,17 +11,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.score.domain.dto.Criteria;
 import com.score.domain.dto.PageMaker;
 import com.score.domain.dto.ReviewCriteria;
 import com.score.domain.dto.SearchCriteria;
-import com.score.domain.vo.BoardVO;
 import com.score.domain.vo.GameVO;
-import com.score.service.GameReveiwService;
 import com.score.service.GameReviewServiceImpl;
 import com.score.service.GameServiceImpl;
+import com.score.utils.UploadFileUtils;
 
 @Controller
 @RequestMapping("/Game")
@@ -28,10 +30,12 @@ public class GameController {
 	private GameServiceImpl service;
 	private GameReviewServiceImpl reviewService;
 	
+	@Resource(name = "uploadPath")
+	private String uploadPath;
+	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String ListGET(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		model.addAttribute("list", service.listSearchCriteria(cri));
-		System.out.println(service.listSearchCriteria(cri).get(0).getGameTitle());
 		
 	    PageMaker pageMaker = new PageMaker();
 	    pageMaker.setCri(cri);
@@ -50,8 +54,20 @@ public class GameController {
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public String insertPOST(GameVO vo) throws Exception {
+	public String insertPOST(GameVO vo, MultipartFile file) throws Exception {
+		
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+		String fileName = null;
+		if(file.getSize() > 0) {
+			fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
+		} else {
+			fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+		}
 
+		vo.setGameImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		//vo.setGdsThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+		
 		service.insert(vo);
 		
 		return "redirect:/Game";
@@ -82,10 +98,22 @@ public class GameController {
 	}
 	
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
-	public String modifyPost(GameVO vo,RedirectAttributes rttr) throws Exception {
+	public String modifyPost(GameVO vo,RedirectAttributes rttr, MultipartFile file) throws Exception {
+		
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+		String fileName = null;
+		
+		if(file.getSize() > 0) {
+			fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+			vo.setGameImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		}
+		
 		service.modify(vo);
 
 		return "redirect:/Game/readPage?gameNumber=" + vo.getGameNumber();
 	}
+	
+	
 
 }

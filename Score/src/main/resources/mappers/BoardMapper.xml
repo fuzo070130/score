@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</select>
 
-	<select id="countPaging" resultType="int">
+	<select id="countPaging" resultType="java.lang.Integer">
 		<![CDATA[
 		select 
 		count(boardNumber) 
@@ -61,7 +61,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</select>
 	
-	<select id="listSearchCount" resultType="int">
+	<select id="listSearchCount" resultType="java.lang.Integer">
 		
 		<![CDATA[  
 	 	 select count(boardNumber) 

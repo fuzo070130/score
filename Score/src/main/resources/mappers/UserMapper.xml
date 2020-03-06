@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.score.mapper.UserMapper">
 
 	<insert id="register">
-		INSERT INTO user (userID, userName, userNickName, userPassWord) 
-		VALUES (#{userID}, #{userName}, #{userNickName}, #{userPassWord})
+		INSERT INTO user (userID, userName, userNickName, userPassWord, userEmail, userEmailCheck) 
+		VALUES (#{userID}, #{userName}, #{userNickName}, #{userPassWord}, #{userEmail}, #{userEmailCheck})
 	</insert>
 	
 	<select id="registerCheck" resultType="UserVO">
@@ -16,6 +16,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="login" resultType="UserVO">
 		SELECT * FROM user where userID = #{userID} and userPassWord = #{userPassWord}
+	</select>
+	
+	<select id="idCheck" resultType="java.lang.Integer" parameterType="String">
+		SELECT count(*) FROM user where userID = #{userID}
+	</select>
+	
+	<select id="nickNameCheck" resultType="java.lang.Integer" parameterType="String">
+		SELECT count(*) FROM user where userNickName = #{userNickName}
 	</select>
 
 </mapper>

@@ -28,4 +28,14 @@ public class UserServiceImpl implements UserService{
 		return dao.registerCheck(vo);
 	}
 
+	@Override
+	public int idCheck(String userID) throws Exception {
+		return dao.idCheck(userID);
+	}
+
+	@Override
+	public int nickNameCheck(String userNickName) throws Exception {
+		return dao.nickNameCheck(userNickName);
+	}
+
 }

@@ -32,4 +32,16 @@ public class UserDAOImpl implements UserDAO{
 		return session.selectOne(namespace + ".registerCheck", vo);
 	}
 
+
+	@Override
+	public int idCheck(String userID) throws Exception {
+		return session.selectOne(namespace + ".idCheck" , userID);
+	}
+
+
+	@Override
+	public int nickNameCheck(String userNickName) throws Exception {
+		return session.selectOne(namespace + ".nickNameCheck" , userNickName);
+	}
+
 }

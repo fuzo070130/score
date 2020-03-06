@@ -27,7 +27,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public BoardVO readPage(int boardNumber) {
+	public BoardVO readPage(Integer boardNumber) {
 		return dao.readPage(boardNumber);
 	}
 
@@ -37,7 +37,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int delete(int boardNumber) {
+	public int delete(Integer boardNumber) {
 		return dao.delete(boardNumber);
 	}
 	

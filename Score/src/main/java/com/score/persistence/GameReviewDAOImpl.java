@@ -22,7 +22,7 @@ public class GameReviewDAOImpl implements GameReviewDAO {
 	}
 
 	@Override
-	public List<GameReviewVO> select(int gameNumber) {
+	public List<GameReviewVO> select(Integer gameNumber) {
 		return session.selectList(namespace + ".list", gameNumber);
 	}
 
@@ -32,7 +32,7 @@ public class GameReviewDAOImpl implements GameReviewDAO {
 	}
 
 	@Override
-	public int delete(int gameReviewNumber) {
+	public int delete(Integer gameReviewNumber) {
 		return session.delete(namespace + ".delete", gameReviewNumber);
 	}
 

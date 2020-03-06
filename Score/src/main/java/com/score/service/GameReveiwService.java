@@ -8,10 +8,10 @@ public interface GameReveiwService {
 	
 	public int insert(GameReviewVO vo);
 
-	public List<GameReviewVO> select(int gameNumber);
+	public List<GameReviewVO> select(Integer gameNumber);
 	
 	public int update(GameReviewVO vo);
 	
-	public int delete(int gameReviewNumber);
+	public int delete(Integer gameReviewNumber);
 
 }

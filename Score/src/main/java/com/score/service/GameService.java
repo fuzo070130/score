@@ -13,7 +13,7 @@ public interface GameService {
 	
 	public List<GameVO> list();
 	
-	public GameVO readPage(int GameNumber);
+	public GameVO readPage(Integer GameNumber);
 	
 	public List<GameVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 

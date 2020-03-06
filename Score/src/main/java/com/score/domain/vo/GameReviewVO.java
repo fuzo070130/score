@@ -4,35 +4,35 @@ import java.sql.Date;
 
 public class GameReviewVO {
 	
-	private int gameReviewNumber;
-	private int gameNumber;
-	private int userNumber;
-	private int userNickName;
+	private Integer gameReviewNumber;
+	private Integer gameNumber;
+	private Integer userNumber;
+	private Integer userNickName;
 	private String gameReviewText;
 	private Date gameReviewDate;
 	
-	public int getGameReviewNumber() {
+	public Integer getGameReviewNumber() {
 		return gameReviewNumber;
 	}
-	public void setGameReviewNumber(int gameReviewNumber) {
+	public void setGameReviewNumber(Integer gameReviewNumber) {
 		this.gameReviewNumber = gameReviewNumber;
 	}
-	public int getGameNumber() {
+	public Integer getGameNumber() {
 		return gameNumber;
 	}
-	public void setGameNumber(int gameNumber) {
+	public void setGameNumber(Integer gameNumber) {
 		this.gameNumber = gameNumber;
 	}
-	public int getUserNumber() {
+	public Integer getUserNumber() {
 		return userNumber;
 	}
-	public void setUserNumber(int userNumber) {
+	public void setUserNumber(Integer userNumber) {
 		this.userNumber = userNumber;
 	}
-	public int getUserNickName() {
+	public Integer getUserNickName() {
 		return userNickName;
 	}
-	public void setUserNickName(int userNickName) {
+	public void setUserNickName(Integer userNickName) {
 		this.userNickName = userNickName;
 	}
 	public String getGameReviewText() {
@@ -47,5 +47,5 @@ public class GameReviewVO {
 	public void setGameReviewDate(Date gameReviewDate) {
 		this.gameReviewDate = gameReviewDate;
 	}
-
+	
 }

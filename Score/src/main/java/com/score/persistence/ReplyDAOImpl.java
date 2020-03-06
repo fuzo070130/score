@@ -24,7 +24,7 @@ public class ReplyDAOImpl implements ReplyDAO {
 	}
 
 	@Override
-	public List<ReplyVO> replyList(int boardNumber, int replyPoint) {
+	public List<ReplyVO> replyList(Integer boardNumber, Integer replyPoint) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("boardNumber", boardNumber);
 		map.put("replyPoint", replyPoint);

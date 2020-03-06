@@ -1,24 +1,27 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<html>
+<!DOCTYPE html><html lang="en">
+	<jsp:include page="../base/header.jsp"/>
 <head>
-<meta charset="UTF-8">
-<title>UserInfo</title>
-<script type="text/javascript"
-	src="/score/resources/js/jquery-3.3.1.min.js"></script>
+	<meta charset="UTF-8">
+	<title>BoardInsert</title>
+	
+	<script type="text/javascript" src="/score/resources/js/jquery-3.3.1.min.js"></script>
 </head>
-<body>
-	<form action="/score/Board/insert" method="post" id="formInsert">
-		<input type="hidden" name="userNickName"value="${sessionScope.vo.userNickName }"> 
-		<input type="hidden" name="userNumber"value="${sessionScope.vo.userNumber }"> 
-		제목 : <input type="text"name="boardTitle"><br /> 
-		내용 : <input type="text"name="boardContent"><br /> 
-		<input type="button" value="작성"onclick="insert();"><br /> 
-		<input type="button" value="취소"onclick="cancle();">
-	</form>
-</body>
-</html>
-<script>
+	<body>
+		<div class="container container-main">
+			<div class="main">
+				<form action="/score/Board/insert" method="post" id="formInsert">
+					<input type="hidden" name="userNickName"value="${sessionScope.vo.userNickName }"> 
+					<input type="hidden" name="userNumber"value="${sessionScope.vo.userNumber }"> 
+					제목 : <input type="text"name="boardTitle"><br /> 
+					내용 : <input type="text"name="boardContent"><br /> 
+					<input type="button" value="작성"onclick="insert();"><br /> 
+					<input type="button" value="취소"onclick="cancle();">
+				</form>
+			</div>
+		</div>
+	<script>
 	function cancle() {
 		location.href = '/score/Board';
 	}
@@ -35,4 +38,7 @@
 			$('#formInsert').submit();
 		}
 	}
-</script>
+	</script>
+	</body>
+	<jsp:include page="../base/footer.jsp"/>
+</html>

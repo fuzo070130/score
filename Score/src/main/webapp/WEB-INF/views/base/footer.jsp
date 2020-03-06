@@ -1,66 +1,100 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>title</title>
+	<title>footer</title>
 	<link rel="stylesheet" href="/score/resources/css/footer.css">
 	
-</head>
-<body>
-	<div class="footer">
-		<div class="footer-notice">
-			<div class="notice">
-				공지사항
-			</div>
-		</div>
-		<div class="footer-aside">
-			<div class="aside-area-left">
-				<div class="aside-area-left-txt">
-					Created by Lee Jun Soo &copy; 2019. 이준수(Lee Jun Soo) all rights reserved. <br> 
-					Mail - fuzo070130@gmail.com <br>
-					Phone 010-4434-1503
-				</div>
-			</div>
-			<div class="aside-area">
-				<div class="aside-area-txt">
-					디자인은 네이버를 참고하였습니다
-				</div>
-			</div>
-		</div>
-		<div class="footer-section">
-			<div class="section-area">
-				<ul class="section-ul">
-					<li class="section-li">
-						<a href="" class="section-li-a">회사소개</a>
-					</li>
-					<li class="section-li">
-						<span class="section-li-bar"></span>
-						<a href="" class="section-li-a">인재채용</a>
-					</li>
-					<li class="section-li">
-						<span class="section-li-bar"></span>
-						<a href="" class="section-li-a">제휴제안</a>
-					</li>
-					<li class="section-li">
-						<span class="section-li-bar"></span>
-						<a href="" class="section-li-a">이용약관</a>
-					</li>
-					<li class="section-li">
-						<span class="section-li-bar"></span>
-						<a href="" class="section-li-a">개인정보처리방침</a>
-					</li>
-					<li class="section-li">
-						<span class="section-li-bar"></span>
-						<a href="" class="section-li-a">청소년보호정책</a>
-					</li>
-					<li class="section-li">
-						<span class="section-li-bar"></span>
-						<a href="" class="section-li-a">고객센터</a>
-					</li>
-				</ul>
-			</div>
+</head><body>
+	<div class="container">
+		<div class="footer">
+			<footer class="page-footer font-small bg-light pt-4">
+			
+			  <!-- Footer Links -->
+			  <div class="container-fluid text-center text-md-left">
+			
+			    <!-- Grid row -->
+			    <div class="row">
+			
+			      <!-- Grid column -->
+			      <div class="col-md-6 mt-md-0 mt-3">
+			
+			        <!-- Content -->
+			        <h5 class="text-uppercase">Footer Content</h5>
+			        <p>Here you can use rows and columns to organize your footer content.</p>
+			
+			      </div>
+			      <!-- Grid column -->
+			
+			      <hr class="clearfix w-100 d-md-none pb-3">
+			
+			      <!-- Grid column -->
+			      <div class="col-md-3 mb-md-0 mb-3">
+			
+			        <!-- Links -->
+			        <h5 class="text-uppercase">Links</h5>
+			
+			        <ul class="list-unstyled">
+			          <li>
+			            <a href="#!">Link 1</a>
+			          </li>
+			          <li>
+			            <a href="#!">Link 2</a>
+			          </li>
+			          <li>
+			            <a href="#!">Link 3</a>
+			          </li>
+			          <li>
+			            <a href="#!">Link 4</a>
+			          </li>
+			        </ul>
+			
+			      </div>
+			      <!-- Grid column -->
+			
+			      <!-- Grid column -->
+			      <div class="col-md-3 mb-md-0 mb-3">
+			
+			        <!-- Links -->
+			        <h5 class="text-uppercase">Links</h5>
+			
+			        <ul class="list-unstyled">
+			          <li>
+			            <a href="#!">Link 1</a>
+			          </li>
+			          <li>
+			            <a href="#!">Link 2</a>
+			          </li>
+			          <li>
+			            <a href="#!">Link 3</a>
+			          </li>
+			          <li>
+			            <a href="#!">Link 4</a>
+			          </li>
+			        </ul>
+			
+			      </div>
+			      <!-- Grid column -->
+			
+			    </div>
+			    <!-- Grid row -->
+			
+			  </div>
+			  <!-- Footer Links -->
+			
+			  <!-- Copyright -->
+			  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+			    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+			  </div>
+			  <!-- Copyright -->
+			
+			</footer>
 		</div>
 	</div>
-</body>	
-</html>
+	
+	
+	<script src="/score/resources/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/score/resources/css/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+</body></html>

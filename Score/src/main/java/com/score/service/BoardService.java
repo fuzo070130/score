@@ -11,11 +11,11 @@ public interface BoardService {
 
 	public List<BoardVO> list();
 	
-	public BoardVO readPage(int boardNumber);
+	public BoardVO readPage(Integer boardNumber);
 	
 	public int modify(BoardVO vo);
 	
-	public int delete(int boardNumber);
+	public int delete(Integer boardNumber);
 	
 	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 

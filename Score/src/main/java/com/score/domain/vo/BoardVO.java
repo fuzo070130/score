@@ -11,16 +11,17 @@ public class BoardVO {
 	private String userNickName;
 	private Integer userNumber;
 	private Date boardRegDate;
+	private Date boardUpdateDate;
+	private Integer boardReplyPoint;
+	private Integer boardViewPoint;
+	private Integer boardGoodPoint;
+	
 	public Integer getUserNumber() {
 		return userNumber;
 	}
 	public void setUserNumber(Integer userNumber) {
 		this.userNumber = userNumber;
 	}
-	private Date boardUpdateDate;
-	private Integer boardReplyPoint;
-	private Integer boardViewPoint;
-	private Integer boardGoodPoint;
 	
 	public Integer getBoardNumber() {
 		return boardNumber;

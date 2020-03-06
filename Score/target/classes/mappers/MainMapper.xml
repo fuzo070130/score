@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.score.mapper.MainMapper">
 
-	<select id="Main" resultType="int">
+	<select id="Main" resultType="java.lang.Integer">
 		select 1
 	</select>
 

@@ -31,7 +31,7 @@ public class BoardDAOImpl implements BoardDAO{
 
 
 	@Override
-	public BoardVO readPage(int boardNumber) {
+	public BoardVO readPage(Integer boardNumber) {
 		return session.selectOne(namespace +".readPage", boardNumber);
 	}
 
@@ -43,7 +43,7 @@ public class BoardDAOImpl implements BoardDAO{
 
 
 	@Override
-	public int delete(int boardNumber) {
+	public int delete(Integer boardNumber) {
 		return session.delete(namespace + ".delete", boardNumber);
 	}
 	

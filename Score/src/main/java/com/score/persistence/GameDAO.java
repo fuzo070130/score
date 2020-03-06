@@ -11,7 +11,7 @@ public interface GameDAO {
 	
 	public List<GameVO> list();
 	
-	public GameVO readPage(int GameNumber);
+	public GameVO readPage(Integer GameNumber);
 	
 	public List<GameVO> listSearch(SearchCriteria cri) throws Exception;
 

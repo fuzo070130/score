@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.section-register {
+	clear: both;
+	text-align: left;
+	zoom: 1;
+}
+.section-register:after {
+	display: table;
+    clear: both;
+    table-layout: fixed;
+    content: "";
+}
+.Register-area {
+	margin: 0 auto;
+	position: relative;
+	width: 744px;
+	height: 600px;
+	border: 1px solid #dee3eb;
+	background: #fff;
+}

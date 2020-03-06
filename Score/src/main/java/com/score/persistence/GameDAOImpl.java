@@ -28,7 +28,7 @@ public class GameDAOImpl implements GameDAO {
 	}
 
 	@Override
-	public GameVO readPage(int GameNumber) {
+	public GameVO readPage(Integer GameNumber) {
 		return session.selectOne(namespace + ".readPage", GameNumber);
 	}
 

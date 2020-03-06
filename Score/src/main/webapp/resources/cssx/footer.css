@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+.footer {
+	margin-top: 8px;
+	border-top: 1px solid #e3e7ee;
+	background: #fff;
+	text-align: left;
+}
+.footer-notice {
+	position: relative;
+	border-bottom: 1px solid #f1f3f6;
+}
+.notice {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 16px;
+	width: 1080px;
+	height: 29px;
+	zoom: 1;
+}
+.aside-area-left{
+	float: left;
+	margin: 15px;
+	margin-left: 0px;
+	font-size: 18px;
+}
+.footer-aside {
+	position: relative;
+	margin: 0 auto;
+	width: 1080px;
+	height: 100px;
+	zoom: 1;
+}
+.aside-area {
+	position: relative;
+    z-index: 10;
+    float: right;
+    margin-top: 25px;
+    padding-left: 25px;
+    height: 50px;
+    border-left: 1px solid #f1f3f6;
+    margin-right: 25px;
+}
+.aside-area-txt {
+	position: relative;
+	margin-top: 17px;
+}
+.footer-section {
+	position: relative;
+	border-top: 1px solid #f1f3f6;
+}
+.section-area {
+	position: relative;
+    margin: 0 auto;
+    padding-top: 24px;
+    width: 1080px;
+    height: 132px;
+    zoom: 1;
+}
+.section-ul {
+	position: relative;
+	float: left;
+	margin-right: 14px;
+}
+.section-ul:after {
+	display: table;
+    clear: both;
+    table-layout: fixed;
+    content: "";
+}
+.section-li:first-child {
+	margin-left: 0px;
+}
+.section-li {
+	margin-left: 14px;
+	float: left;
+}
+.section-li-bar {
+	display: inline-block;
+    margin-right: 14px;
+    width: 1px;
+    height: 11px;
+    background: #e8e9ec;
+    vertical-align: -2px;
+}
+.section-li-a {
+	color: #888;
+    vertical-align: top;
+    letter-spacing: -1px;
+    font-size: 12px;
+    line-height: 16px;
+}

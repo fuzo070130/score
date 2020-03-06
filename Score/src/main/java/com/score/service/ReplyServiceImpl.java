@@ -21,7 +21,7 @@ public class ReplyServiceImpl implements ReplyService{
 	}
 
 	@Override
-	public List<ReplyVO> replyList(int boardNumber, int replyPoint) {
+	public List<ReplyVO> replyList(Integer boardNumber, Integer replyPoint) {
 		return dao.replyList(boardNumber, replyPoint);
 	}
 

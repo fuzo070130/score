@@ -4,6 +4,7 @@ public class GameVO {
 	
 	private Integer gameNumber;
 	private String gameTitle;
+	private String gameImg;
 	private String gameDeveloper;
 	private String gameDistributor;
 	private String gamePlatform;
@@ -20,6 +21,12 @@ public class GameVO {
 	}
 	public void setGameNumber(Integer gameNumber) {
 		this.gameNumber = gameNumber;
+	}
+	public String getGameImg() {
+		return gameImg;
+	}
+	public void setGameImg(String gameImg) {
+		this.gameImg = gameImg;
 	}
 	public String getGameTitle() {
 		return gameTitle;
